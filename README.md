@@ -1,6 +1,7 @@
-# XmlandJsonCLIUtitlty
+# Address Book Converter
 Java Command Line application to convert an Address Book to its XML or JSON equivalent.
 This can also validate if a given XML or JSON file follows the schema provided in /src/main/resources/ad.xsd.
+A sample address book (in XML format) can be found in src/main/resources/ad.xml. 
 
 # Usage
 There are two ways to use this application, either in "interactive mode" or just by passing the command line arguements.
