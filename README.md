@@ -41,4 +41,4 @@ java -jar [jarFileName].jar <input file> -v
 5. Run ```java -jar address-book-converter-fat-jar.jar <input file> <output file>``` to convert the file in command line arguments mode.
 6. Run ```java -jar address-book-converter-fat-jar.jar <input file> -v``` or ```java -jar address-book-converter-fat-jar.jar <input file> --version``` to validate a given XML or JSON file to see if it's a valid address book.
 
-A copy of the provided ad.xml is in /src/main/resources/ad.xml for convince.
+A copy of the provided ad.xml is in /src/main/resources/ad.xml for convenience.
