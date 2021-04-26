@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.colby.morrissey'
+version '1.0'
+
+application {
+    mainClass = 'Main'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.10.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+
+tasks.register('uberJar', Jar) {
+    archiveClassifier = 'fat-jar'
+    archivesBaseName = 'address-book-converter'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest {
+        attributes(
+                "Main-Class": "Main"
+        )
+    }
+    exclude("META-INF/*.RSA", "META-INF/*.SF","META-INF/*.DSA", "META-INF/*", "module-info.class")
+    from sourceSets.main.output
+
+    dependsOn configurations.runtimeClasspath
+    from {
+        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
