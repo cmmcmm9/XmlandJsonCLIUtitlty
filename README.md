@@ -42,3 +42,8 @@ java -jar [jarFileName].jar <input file> -v
 6. Run ```java -jar address-book-converter-fat-jar.jar <input file> -v``` or ```java -jar address-book-converter-fat-jar.jar <input file> --version``` to validate a given XML or JSON file to see if it's a valid address book.
 
 A copy of the provided ad.xml is in /src/main/resources/ad.xml for convenience.
+
+# Testing
+Unit tests can be run by entering the project directory and typing ```gradlew test```.
+The files are located in /src/test/.
+JUnit5 was used for the testing framework.
