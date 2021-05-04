@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "org.jetbrains.kotlin.jvm" version "1.4.32"
     id 'application'
 }
 
@@ -31,6 +32,25 @@ tasks.register('uberJar', Jar) {
     manifest {
         attributes(
                 "Main-Class": "Main"
+        )
+    }
+    exclude("META-INF/*.RSA", "META-INF/*.SF","META-INF/*.DSA", "META-INF/*", "module-info.class")
+    from sourceSets.main.output
+
+    dependsOn configurations.runtimeClasspath
+    from {
+        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+    }
+}
+
+tasks.register('uberJarKotlin', Jar) {
+    archiveClassifier = 'kotlin'
+    archivesBaseName = 'word-shuffler'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest {
+        attributes(
+                "Main-Class": "MainKt"
         )
     }
     exclude("META-INF/*.RSA", "META-INF/*.SF","META-INF/*.DSA", "META-INF/*", "module-info.class")

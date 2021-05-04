@@ -1,12 +1,14 @@
-# Address Book Converter
+# Two parts: Address Book Converter and Word Shuffle Validator
+
+# Part 1: Address Book Converter
 Java Command Line application to convert an Address Book to its XML or JSON equivalent.
 This can also validate if a given XML or JSON file follows the schema provided in /src/main/resources/ad.xsd.
 A sample address book (in XML format) can be found in src/main/resources/ad.xml. 
 
-# Usage
-There are two ways to use this application, either in "interactive mode" or just by passing the command line arguements.
+## Usage
+There are two ways to use this application, either in "interactive mode" or just by passing the command line arguments.
 ## Interactive Mode
-In this mode, the application will prompt the user with a list of options. After the selection is made, it will walk the user throught the required information.
+In this mode, the application will prompt the user with a list of options. After the selection is made, it will walk the user throughout the required information.
 
 The menu looks like this:
 
@@ -34,7 +36,7 @@ java -jar [jarFileName].jar <input file> --validate
 java -jar [jarFileName].jar <input file> -v
 ```
 
-# Quickstart
+## Quickstart
 1. Clone the repository
 2. Enter the project directory and run ```gradlew uberJar```
 3. Enter the /build/libs directory, and you should see the fat jar, named address-book-converter-fat-jar.jar.
@@ -43,6 +45,30 @@ java -jar [jarFileName].jar <input file> -v
 6. Run ```java -jar address-book-converter-fat-jar.jar <input file> -v``` or ```java -jar address-book-converter-fat-jar.jar <input file> --version``` to validate a given XML or JSON file to see if it's a valid address book.
 
 A copy of the provided ad.xml is in /src/main/resources/ad.xml for convenience.
+
+
+
+# Part 2: Word Shuffle Validator
+This program, located in src/main/kotlin/ , will take two words and the shuffled word and output whether the shuffled word is valid.
+
+The shuffle is defined as: a combination of two words where the letters of the shuffle come from the original
+words in such a way that the relative order of the letters coming from the same word is
+maintained, however each letter of the shuffle can be drawn from either of the words.
+
+## Usage
+You must pass the two original words, and the shuffled word to validate as such:
+```java -jar <program jar file> <first word> <second word> <shuffled word>```
+It will output whether the shuffled word in correct. Optionally a file names 'words.txt'
+may be placed in /src/main/resources/. The program will check for the existence of this file, and if present
+will validate if the two given words are present in the file. If the given words are not in the present file, 
+the shuffle will not be checked, and the program will display to the user that the given words
+are not allowed. If the file src/main/resources/words.txt is not present, all passed words are valid.
+
+## Quick Start
+1. Clone the repository
+2. Enter the project directory and run ```gradlew uberJarKotlin```
+3. Enter the /build/libs directory, and you should see the fat jar, named word-shuffler-1.0-kotlin.jar.
+4. Run ```java -jar word-shuffler-1.0-kotlin.jar TOURNAMENT DINNER TDINOURNANMENTER``` or ```java -jar <program jar file> <first word> <second word> <shuffled word>```
 
 # Testing
 Unit tests can be run by entering the project directory and typing ```gradlew test```.
