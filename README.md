@@ -57,7 +57,9 @@ maintained, however each letter of the shuffle can be drawn from either of the w
 
 ## Usage
 You must pass the two original words, and the shuffled word to validate as such:
+
 ```java -jar <program jar file> <first word> <second word> <shuffled word>```
+
 It will output whether the shuffled word in correct. Optionally a file names 'words.txt'
 may be placed in /src/main/resources/. The program will check for the existence of this file, and if present
 will validate if the two given words are present in the file. If the given words are not in the present file, 
