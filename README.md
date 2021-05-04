@@ -17,7 +17,7 @@ The menu looks like this:
       [3] Validate schema of address book
       [4] Exit
      
-Note that the output file does not have to exist, but if filepath are included, it must be a valid filepath.
+Note that the output file does not have to exist, but if filepaths are included, it must be a valid filepath.
 
 ## Command Line Arguments Mode
 In this mode, the user can submit an input file (either .xml or .json) and it will convert the file to the specified output file.
