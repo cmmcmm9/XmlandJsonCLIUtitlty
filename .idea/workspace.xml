@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e9bf1b3-7a9e-48e4-83bf-e10c16068a40" name="Default Changelist" comment="README.md update">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/XmlDsl/src/main/kotlin/XmlDsl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Play.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    <list default="true" id="9e9bf1b3-7a9e-48e4-83bf-e10c16068a40" name="Default Changelist" comment="Add XML DSL Module for building org.w3 DOM with DSL">
+      <change afterPath="$PROJECT_DIR$/XmlDsl/src/main/kotlin/Example.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XmlDsl/src/main/kotlin/XmlDsl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/XmlDsl/src/main/kotlin/XmlDsl.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +112,7 @@
       <recent name="utility" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.XmlandJsonCLIUtitlty:XmlDsl [build]">
+  <component name="RunManager" selected="Kotlin.ExampleKt">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -131,27 +125,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="ShuffleValidatorTest.isShuffleValid" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ShuffleValidatorTest.isShuffleValid&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
     </configuration>
     <configuration name="XmlandJsonCLIUtitlty:XmlDsl [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -173,6 +146,14 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
+    </configuration>
+    <configuration name="ExampleKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ExampleKt" />
+      <module name="XmlandJsonCLIUtitlty.XmlDsl.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
+      </method>
     </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
@@ -199,19 +180,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.ShuffleValidatorTest.isShuffleValid" />
       <item itemvalue="Kotlin.PuppyDslKt" />
       <item itemvalue="Kotlin.XmlDslKt" />
       <item itemvalue="Kotlin.MainKt" />
       <item itemvalue="Gradle.XmlandJsonCLIUtitlty:XmlDsl [build]" />
+      <item itemvalue="Kotlin.ExampleKt" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ExampleKt" />
+        <item itemvalue="Kotlin.PuppyDslKt" />
         <item itemvalue="Gradle.XmlandJsonCLIUtitlty:XmlDsl [build]" />
         <item itemvalue="Kotlin.XmlDslKt" />
         <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="Kotlin.PuppyDslKt" />
-        <item itemvalue="Gradle.ShuffleValidatorTest.isShuffleValid" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +214,7 @@
       <workItem from="1622662878668" duration="157000" />
       <workItem from="1624412363690" duration="1672000" />
       <workItem from="1627000742588" duration="16359000" />
-      <workItem from="1627133037726" duration="9446000" />
+      <workItem from="1627133037726" duration="10960000" />
     </task>
     <task id="LOCAL-00001" summary="Add README.md">
       <created>1619461743158</created>
@@ -277,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620170810087</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add XML DSL Module for building org.w3 DOM with DSL">
+      <created>1627265267605</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1627265267605</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +290,8 @@
     <MESSAGE value="Formatting" />
     <MESSAGE value="Added Word Shuffle validator in ShuffleValidator.kt." />
     <MESSAGE value="README.md update" />
-    <option name="LAST_COMMIT_MESSAGE" value="README.md update" />
+    <MESSAGE value="Add XML DSL Module for building org.w3 DOM with DSL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add XML DSL Module for building org.w3 DOM with DSL" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

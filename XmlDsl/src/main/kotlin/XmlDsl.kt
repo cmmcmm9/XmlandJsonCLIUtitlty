@@ -21,39 +21,41 @@ private val defaultDocumentBuilder by lazy { DocumentBuilderFactory.newDefaultIn
 annotation class XmlDsl
 
 /**
- * Class that handles the building of a [Document] as DSL
+ * Class that handles the building of a [Document] with DSL.
+ * For building a document, use [documentBuilder]. For building just a [Node], or more specifically an
+ * [Element], use [nodeBuilder]. See [main] in Example.kt for a sample.
  */
 @XmlDsl
 class DocumentBuilder(
     private val document: Document = defaultDocumentBuilder.newDocument()
 ){
 
-    internal inner class NodeBuilder(nodeName: String, action: Node.() -> Unit) {
+    private inner class NodeBuilder(nodeName: String, action: Node.() -> Unit) {
         private val node: Node = document.createElement(nodeName).apply(action)
         fun build(): Node = node
     }
 
-    internal inner class ElementBuilder(nodeName: String, action: Element.() -> Unit) {
+    private inner class ElementBuilder(nodeName: String, action: Element.() -> Unit) {
         private val element: Element = document.createElement(nodeName).apply(action)
         fun build(): Element = element
     }
 
-    internal inner class TextNodeBuilder(data: String, action: Text.() -> Unit){
+    private inner class TextNodeBuilder(data: String, action: Text.() -> Unit){
         private val textNode: Text = document.createTextNode(data).apply(action)
         fun build(): Text = textNode
     }
 
-    internal inner class CommentNodeBuilder(comment: String, action: Comment.() -> Unit){
+    private inner class CommentNodeBuilder(comment: String, action: Comment.() -> Unit){
         private val commentNode: Comment = document.createComment(comment).apply(action)
         fun build(): Comment = commentNode
     }
 
-    internal inner class CdataNodeBuilder(data: String, action: CDATASection.() -> Unit){
+    private inner class CdataNodeBuilder(data: String, action: CDATASection.() -> Unit){
         private val cDataSection: CDATASection = document.createCDATASection(data).apply(action)
         fun build(): CDATASection = cDataSection
     }
 
-    internal inner class AttrNodeBuilder(name: String, action: Attr.() -> Unit){
+    private inner class AttrNodeBuilder(name: String, action: Attr.() -> Unit){
         private val attrNode: Attr = document.createAttribute(name).apply(action)
         fun build(): Attr = attrNode
     }
@@ -158,15 +160,17 @@ class DocumentBuilder(
 
 }
 
-fun documentBuilder(nodes: DocumentBuilder.NodeBuilderViewModel.() -> Unit): Document {
+@XmlDsl
+fun documentBuilder(nodes: @XmlDsl DocumentBuilder.NodeBuilderViewModel.() -> Unit): Document {
     return DocumentBuilder().NodeBuilderViewModel().apply(nodes).buildDocument()
 }
 
+@XmlDsl
 fun nodeBuilder(document: Document, rootNodeTagName: String, action: Node.() -> Unit): Node{
     return document.createElement(rootNodeTagName).apply(action)
 }
 
-fun Node.children(children: DocumentBuilder.NodeArrayList.() -> Unit){
+fun Node.children(children: @XmlDsl DocumentBuilder.NodeArrayList.() -> Unit){
     val builder = DocumentBuilder(this.ownerDocument).NodeBuilderViewModel(this)
     val result = DocumentBuilder(this.ownerDocument).NodeArrayList().apply(children)
     builder.nodes(result)
@@ -177,7 +181,7 @@ fun getNewDocument(): Document = DocumentBuilderFactory.newDefaultInstance().new
 
 
 @Throws(IOException::class, TransformerException::class)
-fun printDocument(doc: Document?, out: OutputStream?) {
+fun printDocument(doc: Document?) {
     val tf = TransformerFactory.newInstance()
     val transformer: Transformer = tf.newTransformer()
     transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no")
@@ -187,115 +191,6 @@ fun printDocument(doc: Document?, out: OutputStream?) {
     transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4")
     transformer.transform(
         DOMSource(doc),
-        StreamResult(OutputStreamWriter(out, "UTF-8"))
+        StreamResult(OutputStreamWriter(System.out, "UTF-8"))
     )
-}
-
-
-
-fun main(){
-
-    val doc = documentBuilder {
-//        println("At the root of docu ${this.currentTime}")
-        rootElement("spooz"){
-
-            children {
-                element("asdas"){
-
-                }
-                attributeNode("Dabs"){
-                    value = "HUGE"
-                }
-                element("OH_YES"){
-
-                    textContent = "hello"
-                    children {
-                        element("deepNode"){
-                            textContent = "YES I LIKE IT"
-                            children {
-                                textNode(" \n HELLO \n"){
-
-                                }
-                                commentNode("THIS YE BE A COMMENT"){
-
-                                }
-
-                                cDataSection("SOME CDATA!!"){
-
-                                }
-                            }
-                        }
-                    }
-                }
-                element("OH_NO"){
-                    textContent = "good bye!"
-                    children {
-                        element("anotherDeepNode"){
-                            textContent = "HOPEFULLY!!"
-                        }
-                    }
-                }
-            }
-        }
-    }
-    val endElement = doc.createElement("endElement")
-    endElement.children {
-        element("newOne"){
-            children {
-                element("SMOKE_WEEEED"){
-
-                }
-            }
-        }
-    }
-    val root = doc.getElementsByTagName("spooz").item(0)
-    printDocument(doc, System.out)
-    root.appendChild(endElement)
-    printDocument(doc, System.out)
-
-    val newNode = nodeBuilder(doc, "newNodeWithBuilder"){
-        textContent = "Hello"
-
-        children {
-            element("FUCK_YEAH"){
-
-            }
-        }
-    }
-
-    root.appendChild(newNode)
-    printDocument(doc, System.out)
-
-    val document = documentBuilder {
-        rootNode("mustafar"){
-            children {
-                attributeNode("hot"){
-                    value = "true"
-                }
-                element("hill"){
-
-                    children {
-                        element("obi-wan"){
-                            setAttribute("highGround", "true")
-
-                            children {
-                                textNode("It's no use Anakin, I have the high ground."){}
-                            }
-                        }
-
-                        element("anakin"){
-                            textContent = "I HATE YOU!!!!!!!!!!!!!!!!"
-                            children {
-                                commentNode("**Queue burning limbs**"){}
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    printDocument(document, System.out)
-
-
 }
