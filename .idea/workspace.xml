@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e9bf1b3-7a9e-48e4-83bf-e10c16068a40" name="Default Changelist" comment="Added Word Shuffle validator in ShuffleValidator.kt." />
+    <list default="true" id="9e9bf1b3-7a9e-48e4-83bf-e10c16068a40" name="Default Changelist" comment="README.md update">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/XmlDsl/src/main/kotlin/XmlDsl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Play.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,9 +44,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Kotlin File" />
         <option value="Kotlin Object" />
         <option value="JUnit5 Test Class" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -109,14 +118,16 @@
       <recent name="utility" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ShuffleValidatorTest.isShuffleValid">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Gradle.XmlandJsonCLIUtitlty:XmlDsl [build]">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -142,10 +153,10 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="XmlandJsonCLIUtitlty [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="XmlandJsonCLIUtitlty:XmlDsl [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/XmlDsl" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
@@ -163,75 +174,44 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="XmlandJsonCLIUtitlty [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="XmlandJsonCLIUtitlty [uberJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="uberJar" />
-          </list>
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <module name="XmlandJsonCLIUtitlty.main" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="TOURNAMENT DINNER DINTOURNERNAMENT" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="MainKt" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <module name="XmlandJsonCLIUtitlty.main" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration name="PuppyDslKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PuppyDslKt" />
+      <module name="XmlandJsonCLIUtitlty.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration name="XmlDslKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="XmlDslKt" />
+      <module name="XmlandJsonCLIUtitlty.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="com.soywiz.korge.intellij.UpdateResourceBeforeRunTask" enabled="false" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.XmlandJsonCLIUtitlty [build]" />
-      <item itemvalue="Gradle.XmlandJsonCLIUtitlty [run]" />
-      <item itemvalue="Gradle.XmlandJsonCLIUtitlty [uberJar]" />
       <item itemvalue="Gradle.ShuffleValidatorTest.isShuffleValid" />
-      <item itemvalue="Application.MainKt" />
+      <item itemvalue="Kotlin.PuppyDslKt" />
+      <item itemvalue="Kotlin.XmlDslKt" />
+      <item itemvalue="Kotlin.MainKt" />
+      <item itemvalue="Gradle.XmlandJsonCLIUtitlty:XmlDsl [build]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.XmlandJsonCLIUtitlty:XmlDsl [build]" />
+        <item itemvalue="Kotlin.XmlDslKt" />
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.PuppyDslKt" />
         <item itemvalue="Gradle.ShuffleValidatorTest.isShuffleValid" />
-        <item itemvalue="Application.MainKt" />
-        <item itemvalue="Gradle.XmlandJsonCLIUtitlty [build]" />
-        <item itemvalue="Gradle.XmlandJsonCLIUtitlty [run]" />
-        <item itemvalue="Gradle.XmlandJsonCLIUtitlty [uberJar]" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +228,12 @@
       <workItem from="1619403575121" duration="1152000" />
       <workItem from="1619451910543" duration="8497000" />
       <workItem from="1620140051324" duration="1346000" />
-      <workItem from="1620146638576" duration="12313000" />
+      <workItem from="1620146638576" duration="12686000" />
+      <workItem from="1620845978245" duration="1728000" />
+      <workItem from="1622662878668" duration="157000" />
+      <workItem from="1624412363690" duration="1672000" />
+      <workItem from="1627000742588" duration="16359000" />
+      <workItem from="1627133037726" duration="9446000" />
     </task>
     <task id="LOCAL-00001" summary="Add README.md">
       <created>1619461743158</created>
@@ -285,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620170523030</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="README.md update">
+      <created>1620170810087</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620170810087</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +293,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add README.md" />
@@ -308,7 +301,15 @@
     <MESSAGE value="Added testing paragraph" />
     <MESSAGE value="Formatting" />
     <MESSAGE value="Added Word Shuffle validator in ShuffleValidator.kt." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Word Shuffle validator in ShuffleValidator.kt." />
+    <MESSAGE value="README.md update" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md update" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="XmlDslKt$main$y$1$1$1" memberName="arity" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="../../../../IdeaProjects/XmlandJsonCLIUtitlty/build/test-results/test/TEST-utility.AddressBookParserTest.xml" NAME="TEST-utility.AddressBookParserTest.xml" MODIFIED="1619313461891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

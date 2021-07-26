@@ -1,2 +1,3 @@
 rootProject.name = 'XmlandJsonCLIUtitlty'
+include 'XmlDsl'
 
